@@ -1,3 +1,4 @@
+// 10001st prime
 package main
 
 import "fmt"

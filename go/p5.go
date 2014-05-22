@@ -1,3 +1,4 @@
+// Smallest multiple
 package main
 
 import "fmt"

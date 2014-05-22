@@ -1,6 +1,10 @@
+// Largest product in a series
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 const (
 	limit = 13
@@ -11,10 +15,19 @@ var (
 )
 
 func main() {
+	var largestProduct, product int
 	arr := []byte(data)
-	for _, value := range arr {
-		fmt.Printf("%v", value)
+	for i := 0; i <= len(arr)-limit; i++ {
+		product = 1
+		for j := 0; j < limit; j++ {
+			value, _ := strconv.Atoi(string(arr[i+j]))
+			product *= value
+		}
+
+		if product > largestProduct {
+			largestProduct = product
+		}
 	}
 
-	fmt.Println("\n\n", len(arr))
+	fmt.Println("Largest product in a series:", largestProduct)
 }
